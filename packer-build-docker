@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+brew ls | grep -q packer || brew install packer
+
+packer build --only=docker images/linux/ubuntu1804.json
